@@ -20,7 +20,7 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                <a className="btn btn-ghost normal-case text-3xl text-primary">GAccessories</a>
             </div>
 
             <div className="navbar-center hidden lg:flex">
