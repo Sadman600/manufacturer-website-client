@@ -1,28 +1,52 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { useForm } from "react-hook-form";
 const Login = () => {
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const onSubmit = data => console.log(data);
     return (
         <div className="hero min-h-screen">
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body w-96 mx-auto ">
-                    <form>
+                    <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-control w-full ">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" placeholder="Enter your email" className="input input-bordered w-full max-w-xs" />
+                            <input type="email"
+                                placeholder="Enter your email"
+                                {...register("email", {
+                                    required: {
+                                        value: true,
+                                        message: 'Email is required'
+                                    },
+                                    pattern: {
+                                        value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                                        message: 'Provide a valid email'
+                                    }
+                                })}
+                                className="input input-bordered w-full max-w-xs" />
                             <label className="label">
-                                <span className="label-text-alt">Alt label</span>
+                                {errors.email?.type === 'required' && <span className="label-text-alt text-error">{errors.email.message}</span>}
+                                {errors.email?.type === 'pattern' && <span className="label-text-alt text-error">{errors.email.message}</span>}
                             </label>
                         </div>
                         <div className="form-control w-full ">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" placeholder="Enter your password" className="input input-bordered w-full max-w-xs" />
+                            <input type="password"
+                                placeholder="Enter your password"
+                                {...register("password", {
+                                    required: {
+                                        value: true,
+                                        message: 'Password is required'
+                                    }
+                                })}
+                                className="input input-bordered w-full max-w-xs" />
                             <label className="label">
-                                <span className="label-text-alt">Alt label</span>
+                                {errors.password?.type === 'required' && <span className="label-text-alt text-error">{errors.password.message}</span>}
+
                             </label>
                         </div>
                         <div className="form-control w-full ">
