@@ -4,11 +4,13 @@ import { useForm } from "react-hook-form";
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../SharedPage/Loading';
+import useToken from '../../../hooks/useToken';
 const SignUp = () => {
     const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
     const [updateProfile, updating, upError] = useUpdateProfile(auth);
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const [token] = useToken(user || gUser);
     const navigate = useNavigate();
     let nUserErr;
     if (error || gError || upError) {
@@ -17,7 +19,7 @@ const SignUp = () => {
     if (loading || gLoading || updating) {
         return <Loading></Loading>
     }
-    if (user || gUser) {
+    if (token) {
         navigate('/purchase');
     }
     const onSubmit = async data => {
