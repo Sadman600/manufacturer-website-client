@@ -1,13 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useQuery } from 'react-query';
+import Loading from '../../SharedPage/Loading';
 import Product from './Product';
 
 const Products = () => {
-    const [products, setProduct] = useState([]);
-    useEffect(() => {
-        fetch('accessories.json')
-            .then(res => res.json())
-            .then(data => setProduct(data))
-    }, [products]);
+    const { isLoading, error, data: products } = useQuery('products', () =>
+        fetch('http://localhost:5000/accessories').then(res =>
+            res.json()
+        )
+    );
+
+    if (isLoading) {
+        return <Loading></Loading>
+    }
+    if (error) {
+        return 'An error has occurred: ' + error.message;
+    }
+
     return (
         <div className='my-5 p-5'>
             <h1 className='text-center text-5xl text-primary font-bold'>Our Accessories</h1>
