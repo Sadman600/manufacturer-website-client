@@ -1,13 +1,34 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import Loading from '../../SharedPage/Loading';
 const Login = () => {
-
-    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+    useEffect(() => {
+        if (user || gUser) {
+            navigate(from, { replace: true });
+        }
+    }, [user, gUser, from, navigate,]);
+
+    let signInErr;
+    if (error || gError) {
+        signInErr = <p>{error?.message || gError?.message}</p>
+    }
+    if (loading || gLoading) {
+        return <Loading></Loading>
+    }
+    const onSubmit = data => {
+        console.log(data);
+        const { email, password } = data;
+        signInWithEmailAndPassword(email, password);
+    };
     return (
         <div className="hero min-h-screen">
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -52,6 +73,9 @@ const Login = () => {
                                 {errors.password?.type === 'required' && <span className="label-text-alt text-error">{errors.password.message}</span>}
 
                             </label>
+                        </div>
+                        <div>
+                            {signInErr}
                         </div>
                         <div className="form-control w-full ">
                             <input type="submit" value='Login' className=" btn btn-primary bg-gradient-to-r from-secondary to-primary text-white font-bold w-full max-w-xs" />
