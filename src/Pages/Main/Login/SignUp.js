@@ -1,12 +1,33 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import Loading from '../../SharedPage/Loading';
+import { async } from '@firebase/util';
 const SignUp = () => {
-    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
+    const [updateProfile, updating, upError] = useUpdateProfile(auth);
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const navigate = useNavigate();
+    let nUserErr;
+    if (error || gError || upError) {
+        nUserErr = <p>{error?.message}</p>
+    }
+    if (loading || gLoading || updating) {
+        return <Loading></Loading>
+    }
+    if (user || gUser) {
+        console.log(user);
+        navigate('/purchase');
+    }
+    const onSubmit = async data => {
+        console.log(data);
+        const { name, email, password } = data;
+        await createUserWithEmailAndPassword(email, password);
+        await updateProfile({ displayName: name });
+    };
     return (
         <div className="hero min-h-screen">
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -78,6 +99,9 @@ const SignUp = () => {
                                 {errors.password?.type === 'minLength' && <span className="label-text-alt text-error">{errors.password.message}</span>}
                                 {errors.password?.type === 'pattern' && <span className="label-text-alt text-error">{errors.password.message}</span>}
                             </label>
+                        </div>
+                        <div>
+                            {nUserErr}
                         </div>
                         <div className="form-control w-full ">
                             <input type="submit" value='Sign UP' className=" btn btn-primary bg-gradient-to-r from-secondary to-primary text-white font-bold w-full max-w-xs" />
