@@ -27,7 +27,6 @@ const Login = () => {
         return <Loading></Loading>
     }
     const onSubmit = data => {
-        console.log(data);
         const { email, password } = data;
         signInWithEmailAndPassword(email, password);
     };

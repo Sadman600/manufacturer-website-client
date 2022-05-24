@@ -20,12 +20,12 @@ const SignUp = () => {
         return <Loading></Loading>
     }
     if (token) {
-        navigate('/purchase');
+        navigate('/');
     }
     const onSubmit = async data => {
         const { name, email, password } = data;
-        await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
+        await createUserWithEmailAndPassword(email, password);
     };
     return (
         <div className="hero min-h-screen">
