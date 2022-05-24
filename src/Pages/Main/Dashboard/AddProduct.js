@@ -30,6 +30,7 @@ const AddProduct = () => {
                         body: JSON.stringify(accessories),
                         headers: {
                             'Content-type': 'application/json',
+                            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                         },
                     })
                         .then(res => res.json())
