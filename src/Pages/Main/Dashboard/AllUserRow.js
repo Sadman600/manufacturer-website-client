@@ -1,6 +1,6 @@
 import React from 'react';
 import { toast } from 'react-toastify';
-const AllUserRow = ({ index, user, refatch }) => {
+const AllUserRow = ({ index, user, refetch }) => {
     const { email, role } = user;
     const handleMakeAdmin = () => {
         fetch(`http://localhost:5000/user/admin/${email}`, {
@@ -13,11 +13,11 @@ const AllUserRow = ({ index, user, refatch }) => {
                 if (res.status === 403) {
                     toast.error('Faild to make an admin');
                 }
-                return res.json();
+                return res.json()
             })
             .then(data => {
                 if (data.modifiedCount > 0) {
-                    refatch();
+                    refetch();
                     toast.success(' successfully make an admin');
                 }
             });

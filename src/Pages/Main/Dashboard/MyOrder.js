@@ -1,7 +1,6 @@
 import React from 'react';
 
 const MyOrder = ({ index, order }) => {
-    console.log(order);
     const { name, email, address, phone, productName, orderQuantity } = order;
     return (
         <tr>
