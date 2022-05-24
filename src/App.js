@@ -11,6 +11,7 @@ import Dashboard from "./Pages/Main/Dashboard/Dashboard";
 import MyProfile from "./Pages/Main/Dashboard/MyProfile";
 import MyOrders from "./Pages/Main/Dashboard/MyOrders";
 import ManageAllOrders from "./Pages/Main/Dashboard/ManageAllOrders";
+import ManageProducts from "./Pages/Main/Dashboard/ManageProducts";
 function App() {
   return (
     <div className="App max-w-screen-xl mx-auto">
@@ -22,6 +23,7 @@ function App() {
           <Route index element={<MyProfile />}></Route>
           <Route path='myorders' element={<MyOrders />}></Route>
           <Route path='allorders' element={<ManageAllOrders />}></Route>
+          <Route path='allproducts' element={<ManageProducts />}></Route>
         </Route>
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
