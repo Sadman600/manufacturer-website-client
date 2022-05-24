@@ -8,7 +8,7 @@ const Navbar = () => {
     const [user] = useAuthState(auth);
     const myMenu = <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/purchase'>Purchase</Link></li>
+        {/* <li><Link to='/purchase'>Purchase</Link></li> */}
         <li>{user ? <button onClick={() => {
             signOut(auth);
             localStorage.removeItem('accessToken');
