@@ -8,6 +8,8 @@ import Purchase from "./Pages/Main/Purchase/Purchase";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from "./Pages/Main/Dashboard/Dashboard";
+import MyProfile from "./Pages/Main/Dashboard/MyProfile";
+import MyOrders from "./Pages/Main/Dashboard/MyOrders";
 function App() {
   return (
     <div className="App max-w-screen-xl mx-auto">
@@ -15,7 +17,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/purchase/:purchaseId" element={<RequireAuth><Purchase /></RequireAuth>} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} >
+          <Route index element={<MyProfile />}></Route>
+          <Route path='myorders' element={<MyOrders />}></Route>
+        </Route>
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
       </Routes>
