@@ -62,12 +62,12 @@ const Order = ({ purchase }) => {
                     <button
                         onClick={() => setCount((count) => count - 1)}
                         className="btn"
-                        disabled={count === minimumOrder}>-</button>
+                        disabled={count === parseInt(minimumOrder)}>-</button>
                     <input type="text" value={count} className="input input-bordered w-full max-w-xs" readOnly />
                     <button
                         onClick={() => setCount((count) => count + 1)}
                         className="btn"
-                        disabled={count === availableQuantity}>+</button>
+                        disabled={count === parseInt(availableQuantity)}>+</button>
                 </div>
                 <form onSubmit={handlePlaceOrder} className="card-body items-center text-center">
                     <input type="text" name='userName' value={userName} className="input input-bordered w-full max-w-xs" readOnly />

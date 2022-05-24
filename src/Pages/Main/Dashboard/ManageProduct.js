@@ -10,7 +10,7 @@ const ManageProduct = ({ index, product }) => {
             <td>{minimumOrder}</td>
             <td>{availableQuantity}</td>
             <td>{price}</td>
-            <td><button class="btn btn-xs capitalize">delete</button></td>
+            <td><button className="btn btn-xs capitalize">delete</button></td>
         </tr>
     );
 };

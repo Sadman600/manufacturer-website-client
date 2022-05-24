@@ -20,8 +20,8 @@ const ManageProducts = () => {
     return (
         <div>
             ManageProducts {products.length}
-            <div class="overflow-x-auto">
-                <table class="table table-compact w-full">
+            <div className="overflow-x-auto">
+                <table className="table table-compact w-full">
 
                     <thead>
                         <tr>
