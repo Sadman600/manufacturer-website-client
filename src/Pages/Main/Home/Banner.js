@@ -9,8 +9,8 @@ const Banner = () => {
                     <div className="hero-content text-center text-neutral-content">
                         <div className="max-w-md">
                             <h1 className="mb-5 text-4xl font-bold text-white text-left">We are all kinds of
-                                <span className='text-warning mx-2'>Garments</span> Accessories
-                                manufacturer
+                                <span className='text-warning mx-2'>Garments Accessories
+                                    manufacturer</span>
                                 & suppliers company</h1>
                             <p className="mb-5 text-white">Bangladeshi Garments Accessories manufacturer company in Dhaka Bangladesh providing all kinds of garments accessories since 2009. We offer tailored Garments accessories for leading Garments in and for the world-class international buyers.</p>
                             <button className=" rounded-full btn btn-primary bg-gradient-to-r from-secondary to-primary text-white font-bold">Get Started</button>

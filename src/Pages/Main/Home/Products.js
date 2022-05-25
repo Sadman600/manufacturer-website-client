@@ -19,7 +19,7 @@ const Products = () => {
 
     return (
         <div className='my-5 p-5'>
-            <h1 className='text-center text-5xl text-primary font-bold'>Our Accessories</h1>
+            <h1 className='text-center text-4xl text-primary font-bold'>Our Accessories</h1>
             <div className='grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-4'>
                 {
                     products.slice(0, 6).map((product, index) => <Product key={index} product={product}></Product>)
