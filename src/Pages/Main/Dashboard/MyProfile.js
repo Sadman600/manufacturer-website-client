@@ -32,7 +32,7 @@ const MyProfile = () => {
     return (
         <div class="card w-full bg-base-100 shadow-xl">
             <div class="card-body">
-                <div class="avatar">
+                <div class="avatar ">
                     <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                         <img src={img ? img : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png'} alt='' />
                     </div>

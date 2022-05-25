@@ -17,12 +17,14 @@ import AllUser from "./Pages/Main/Dashboard/AllUser";
 import RequireAdmin from "./Pages/Main/Login/RequireAdmin";
 import AddReview from "./Pages/Main/Dashboard/AddReview";
 import UpdateProfile from "./Pages/Main/Dashboard/UpdateProfile";
+import MyPortfolio from "./Pages/Main/MyPortfolio/MyPortfolio";
 function App() {
   return (
     <div className="App max-w-screen-xl mx-auto">
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/myPortfolio" element={<MyPortfolio></MyPortfolio>} />
         <Route path="/purchase/:purchaseId" element={<RequireAuth><Purchase /></RequireAuth>} />
         <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} >
           <Route index element={<MyProfile />}></Route>
