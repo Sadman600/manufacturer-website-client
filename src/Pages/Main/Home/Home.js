@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from '../../Footer/Footer';
 import Banner from './Banner';
 import Products from './Products';
+import Reviews from './Reviews';
 import Summary from './Summary';
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
             <Banner></Banner>
             <Products></Products>
             <Summary></Summary>
+            <Reviews></Reviews>
             <Footer></Footer>
         </div>
     );

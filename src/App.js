@@ -14,6 +14,8 @@ import ManageAllOrders from "./Pages/Main/Dashboard/ManageAllOrders";
 import ManageProducts from "./Pages/Main/Dashboard/ManageProducts";
 import AddProduct from "./Pages/Main/Dashboard/AddProduct";
 import AllUser from "./Pages/Main/Dashboard/AllUser";
+import RequireAdmin from "./Pages/Main/Login/RequireAdmin";
+import AddReview from "./Pages/Main/Dashboard/AddReview";
 function App() {
   return (
     <div className="App max-w-screen-xl mx-auto">
@@ -24,10 +26,11 @@ function App() {
         <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} >
           <Route index element={<MyProfile />}></Route>
           <Route path='myorders' element={<MyOrders />}></Route>
-          <Route path='allorders' element={<ManageAllOrders />}></Route>
-          <Route path='allproducts' element={<ManageProducts />}></Route>
-          <Route path='addproduct' element={<AddProduct />}></Route>
-          <Route path='alluser' element={<AllUser />}></Route>
+          <Route path='addreview' element={<AddReview />}></Route>
+          <Route path='allorders' element={<RequireAdmin><ManageAllOrders /></RequireAdmin>}></Route>
+          <Route path='allproducts' element={<RequireAdmin><ManageProducts /></RequireAdmin>}></Route>
+          <Route path='addproduct' element={<RequireAdmin><AddProduct /></RequireAdmin>}></Route>
+          <Route path='alluser' element={<RequireAdmin><AllUser /></RequireAdmin>}></Route>
         </Route>
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />

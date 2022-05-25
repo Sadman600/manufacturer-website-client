@@ -21,14 +21,23 @@ const Dashboard = () => {
                     <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
 
                         <li><Link to='/dashboard'>My Profile</Link></li>
-                        <li><Link to='myorders'>My Orders</Link></li>
+                        {
+                            !admin &&
+                            <>
+                                <li><Link to='myorders'>My Orders</Link></li>
+                                <li><Link to='addreview'>Add Your Review</Link></li>
+                            </>
+                        }
 
-                        {admin && <>
-                            <li><Link to='allorders'>Manage All Orders</Link></li>
-                            <li><Link to='allproducts'>Manage All Products</Link></li>
-                            <li><Link to='addproduct'> Add Product</Link></li>
-                            <li><Link to='alluser'> All User</Link></li>
-                        </>}
+                        {
+                            admin &&
+                            <>
+                                <li><Link to='allorders'>Manage All Orders</Link></li>
+                                <li><Link to='allproducts'>Manage All Products</Link></li>
+                                <li><Link to='addproduct'> Add Product</Link></li>
+                                <li><Link to='alluser'> All User</Link></li>
+                            </>
+                        }
                     </ul>
 
                 </div>
