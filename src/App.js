@@ -18,6 +18,7 @@ import RequireAdmin from "./Pages/Main/Login/RequireAdmin";
 import AddReview from "./Pages/Main/Dashboard/AddReview";
 import UpdateProfile from "./Pages/Main/Dashboard/UpdateProfile";
 import MyPortfolio from "./Pages/Main/MyPortfolio/MyPortfolio";
+import PageNotFound from "./Pages/Main/Home/PageNotFound";
 function App() {
   return (
     <div className="App max-w-screen-xl mx-auto">
@@ -38,6 +39,7 @@ function App() {
         </Route>
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
       <ToastContainer />
     </div>
