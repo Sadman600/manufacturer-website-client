@@ -73,8 +73,8 @@ const Order = ({ purchase }) => {
                     <input type="text" name='userName' value={userName} className="input input-bordered w-full max-w-xs" readOnly />
                     <input type="text" name='email' value={email} className="input input-bordered w-full max-w-xs" readOnly />
                     <input type="text" name='name' value={name} className="input input-bordered w-full max-w-xs" readOnly />
-                    <textarea name='address' className="input input-bordered w-full max-w-xs" />
-                    <input type="text" name='phone' className="input input-bordered w-full max-w-xs" />
+                    <textarea name='address' placeholder='your address' className="input input-bordered w-full max-w-xs" />
+                    <input type="text" name='phone' placeholder='your phone number' className="input input-bordered w-full max-w-xs" />
                     <input type="submit" value='Place Order' className=" btn btn-primary  w-full max-w-xs" />
                 </form>
             </div>

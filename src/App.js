@@ -16,6 +16,7 @@ import AddProduct from "./Pages/Main/Dashboard/AddProduct";
 import AllUser from "./Pages/Main/Dashboard/AllUser";
 import RequireAdmin from "./Pages/Main/Login/RequireAdmin";
 import AddReview from "./Pages/Main/Dashboard/AddReview";
+import UpdateProfile from "./Pages/Main/Dashboard/UpdateProfile";
 function App() {
   return (
     <div className="App max-w-screen-xl mx-auto">
@@ -25,6 +26,7 @@ function App() {
         <Route path="/purchase/:purchaseId" element={<RequireAuth><Purchase /></RequireAuth>} />
         <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} >
           <Route index element={<MyProfile />}></Route>
+          <Route path='updateProfile' element={<UpdateProfile />}></Route>
           <Route path='myorders' element={<MyOrders />}></Route>
           <Route path='addreview' element={<AddReview />}></Route>
           <Route path='allorders' element={<RequireAdmin><ManageAllOrders /></RequireAdmin>}></Route>

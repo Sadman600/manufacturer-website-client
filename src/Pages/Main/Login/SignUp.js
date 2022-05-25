@@ -23,9 +23,8 @@ const SignUp = () => {
         navigate('/');
     }
     const onSubmit = async data => {
-        const { name, email, password } = data;
-        await updateProfile({ displayName: name });
-        await createUserWithEmailAndPassword(email, password);
+        await createUserWithEmailAndPassword(data.email, data.password);
+        await updateProfile({ displayName: data.name });
     };
     return (
         <div className="hero min-h-screen">
