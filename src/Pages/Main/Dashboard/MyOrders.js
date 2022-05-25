@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import auth from '../../../firebase.init';
 import Loading from '../../SharedPage/Loading';
 import MyOrder from './MyOrder';
+import MyOrderModal from './MyOrderModal';
 
 const MyOrders = () => {
+    const [deleteOrder, setDeleteOrder] = useState(null);
     const [user] = useAuthState(auth);
     const email = user?.email;
-    const { isLoading, error, data: orders } = useQuery('orders', () =>
+    const { isLoading, error, data: orders, refetch } = useQuery('orders', () =>
         fetch(`http://localhost:5000/order/${email}`).then(res =>
             res.json()
         )
@@ -40,11 +42,23 @@ const MyOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            orders.map((order, index) => <MyOrder key={index} order={order} index={index}></MyOrder>)
+                            orders.map((order, index) => <MyOrder
+                                key={index}
+                                order={order}
+                                index={index}
+                                setDeleteOrder={setDeleteOrder}
+                            ></MyOrder>)
                         }
                     </tbody>
                 </table>
             </div>
+            {
+                deleteOrder && <MyOrderModal
+                    deleteOrder={deleteOrder}
+                    setDeleteOrder={setDeleteOrder}
+                    refetch={refetch}
+                ></MyOrderModal>
+            }
         </div>
     );
 };
