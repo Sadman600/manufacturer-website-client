@@ -23,7 +23,7 @@ const AddReview = () => {
                         ratings: data.ratings,
                         img: img
                     };
-                    fetch('http://localhost:5000/review', {
+                    fetch('https://protected-fortress-62914.herokuapp.com/review', {
                         method: 'POST',
                         body: JSON.stringify(review),
                         headers: {

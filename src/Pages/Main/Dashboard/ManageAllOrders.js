@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import ManageAllOrder from './ManageAllOrder';
 const ManageAllOrders = () => {
     const { isLoading, error, data: orders } = useQuery('orders', () =>
-        fetch('http://localhost:5000/order', {
+        fetch('https://protected-fortress-62914.herokuapp.com/order', {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

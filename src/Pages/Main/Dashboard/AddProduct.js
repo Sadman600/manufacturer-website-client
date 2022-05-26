@@ -25,7 +25,7 @@ const AddProduct = () => {
                         price: data.price,
                         img: img
                     };
-                    fetch('http://localhost:5000/accessories', {
+                    fetch('https://protected-fortress-62914.herokuapp.com/accessories', {
                         method: 'POST',
                         body: JSON.stringify(accessories),
                         headers: {

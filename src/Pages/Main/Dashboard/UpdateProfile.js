@@ -31,7 +31,7 @@ const UpdateProfile = () => {
                         link: data.link,
                         img: img
                     };
-                    fetch(`http://localhost:5000/user/update/${email}`, {
+                    fetch(`https://protected-fortress-62914.herokuapp.com/user/update/${email}`, {
                         method: 'PUT',
                         body: JSON.stringify(updateUser),
                         headers: {

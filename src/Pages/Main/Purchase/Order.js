@@ -20,7 +20,7 @@ const Order = ({ purchase }) => {
             phone: e.target.phone.value,
             orderQuantity: count,
         };
-        fetch('http://localhost:5000/order', {
+        fetch('https://protected-fortress-62914.herokuapp.com/order', {
             method: 'POST',
             body: JSON.stringify(order),
             headers: {
@@ -31,7 +31,7 @@ const Order = ({ purchase }) => {
             .then((data) => {
                 // console.log(data);
                 if (data.acknowledged) {
-                    fetch(`http://localhost:5000/accessories/${_id}`, {
+                    fetch(`https://protected-fortress-62914.herokuapp.com/accessories/${_id}`, {
                         method: 'PUT',
                         body: JSON.stringify({
                             name: name,

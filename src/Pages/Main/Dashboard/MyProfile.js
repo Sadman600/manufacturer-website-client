@@ -11,7 +11,7 @@ const MyProfile = () => {
     const email = user?.email;
     const name = user?.displayName;
     const { isLoading, error, data: loginUser } = useQuery('loginUser', () =>
-        fetch(`http://localhost:5000/login/${email}`, {
+        fetch(`https://protected-fortress-62914.herokuapp.com/login/${email}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

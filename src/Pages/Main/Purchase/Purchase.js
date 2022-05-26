@@ -7,7 +7,7 @@ import Order from './Order';
 const Purchase = () => {
     const { purchaseId } = useParams();
     const { isLoading, error, data: purchase } = useQuery('purchase', () =>
-        fetch(`http://localhost:5000/accessories/${purchaseId}`).then(res =>
+        fetch(`https://protected-fortress-62914.herokuapp.com/accessories/${purchaseId}`).then(res =>
             res.json()
         )
     )
