@@ -1,6 +1,6 @@
 # Garments Accessories manufacturer
 
-# [Live client website link](https://it-management-service.web.app/).
+# [Live client website link](https://accessories-manufacturer.web.app/).
 # [Live server website link](https://protected-fortress-62914.herokuapp.com/).
 
 This project client Private Code Link:- https://github.com/programming-hero-web-course1/manufacturer-website-client-side-Sadman600
