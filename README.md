@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Garments Accessories manufacturer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# [Live client website link](https://it-management-service.web.app/).
+# [Live server website link](https://ancient-hollows-23865.herokuapp.com/).
 
-## Available Scripts
+This project client Private Code Link:- https://github.com/programming-hero-web-course1/manufacturer-website-client-side-Sadman600
 
-In the project directory, you can run:
+This project server Private Code Link:- https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-Sadman600
 
-### `npm start`
+# Garments Accessories manufacturer project outline
+➤ Added Home page. add there Navbar, Product banner and items section, two extra section,review section, summery section and footer;
+➤ Every item has added  Buy now button. when clicked Buy now button it will go to purchase page.  Purchase pages has added  some input  filed , added increase/decrease button and place order  button. when a user give input some information then click place order button that data will added database;
+➤ Added Blogs page. add there some quations answer;
+➤ Added Myportfolio Page for my information ;
+➤ Added Dashboard Route page when a user login that user will see that user profile, his/her order and review page . if that user want to comment for his/her any exprience he/she will could add some review data  in this review page. but when an admin login she/he will not see user profile, user order and review page, she/he will see Manage all order, manage all products, add products route page. an admin will could manage all order, manage all product and add any product;
+➤ Implement in this project Require Auth, Require Admin, Require non Admin;
+➤ Added Sign In page for new user;
+➤ Added Log In page for existing user;
+➤ Added Log out page for when user is login;
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# IT Management Service project has include technology 
+➤HTML5 
+➤CSS
+➤Tailwind css component library daisyUI
+➤React
+➤React Firbase 
+➤React Router
+➤React Router Hook
+➤React Hook Form
+➤React Firebase Hook
+➤React Query
+➤React Toastify
+➤MongoDB
+➤Node.JS
+➤Express.JS
+➤Axois
+➤Nodemon
+➤Middleware cors
