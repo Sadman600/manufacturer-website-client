@@ -56,7 +56,7 @@ const Order = ({ purchase }) => {
             });
     }
     return (
-        <div className='w-96 mx-auto'>
+        <div className='w-96 mx-auto mt-5'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="input-group">
                     <button

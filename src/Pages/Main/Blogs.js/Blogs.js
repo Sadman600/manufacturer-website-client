@@ -10,13 +10,13 @@ const Blogs = () => {
         <div>
             <h1 className='text-primary text-5xl text-center font-bold my-2'>Our Blogs</h1>
             <Blog1></Blog1>
-            <div class="divider"></div>
+            <div className="divider"></div>
             <Blog2></Blog2>
-            <div class="divider"></div>
+            <div className="divider"></div>
             <Blog3></Blog3>
-            <div class="divider"></div>
+            <div className="divider"></div>
             <Blog4></Blog4>
-            <div class="divider"></div>
+            <div className="divider"></div>
             <Blog5></Blog5>
         </div>
     );

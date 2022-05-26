@@ -11,7 +11,7 @@ const ManageAllOrder = ({ index, order }) => {
             <td>{phone}</td>
             <td>{productName}</td>
             <td>{orderQuantity}</td>
-            <td><button class="btn btn-xs capitalize">delete</button></td>
+            <td><button className="btn btn-xs capitalize">delete</button></td>
         </tr>
     );
 };

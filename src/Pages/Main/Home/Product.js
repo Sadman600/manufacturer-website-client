@@ -17,7 +17,7 @@ const Product = ({ product }) => {
                 <h4 className='font-bold'>Available Quantity: {availableQuantity} pcs</h4>
                 <h4 className='font-bold text-xl'>Price: ${price}</h4>
                 <div className="card-actions justify-end">
-                    <button onClick={() => handleBuy(_id)} className="btn btn-primary bg-gradient-to-r from-secondary to-primary text-white font-bold">Buy Now</button>
+                    <button onClick={() => handleBuy(_id)} disabled={parseInt(availableQuantity) <= 3} className="btn btn-primary bg-gradient-to-r from-secondary to-primary text-white font-bold">{parseInt(availableQuantity) <= 3 ? 'No available' : 'Buy Now'}</button>
                 </div>
             </div>
         </div>

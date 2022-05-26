@@ -8,9 +8,9 @@ const MyPortfolio = () => {
     return (
         <div >
             <Address></Address>
-            <div class="divider"></div>
+            <div className="divider"></div>
             <Education></Education>
-            <div class="divider"></div>
+            <div className="divider"></div>
             <Skills></Skills>
             <Projects></Projects>
         </div>

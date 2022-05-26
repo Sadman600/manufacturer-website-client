@@ -30,21 +30,21 @@ const MyProfile = () => {
     }
     const { img, link, religion, location, nationality } = loginUser;
     return (
-        <div class="card w-full bg-base-100 shadow-xl">
-            <div class="card-body">
-                <div class="avatar ">
-                    <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+        <div className="card w-full bg-base-100 shadow-xl">
+            <div className="card-body">
+                <div className="avatar ">
+                    <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                         <img src={img ? img : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png'} alt='' />
                     </div>
                 </div>
-                <h2 class="card-title">{name}</h2>
+                <h2 className="card-title">{name}</h2>
                 <p>{email}</p>
                 <p>{link ? link : 'No profile link'}</p>
                 <p>Religion: {religion ? religion : 'No religion'}</p>
                 <p>Nationality: {nationality ? nationality : 'No nationality'}</p>
                 <p>Location: {location ? location : 'No location'}</p>
-                <div class="card-actions justify-end">
-                    <button onClick={() => navigate('updateProfile')} class="btn btn-primary capitalize">Update Profile</button>
+                <div className="card-actions justify-end">
+                    <button onClick={() => navigate('updateProfile')} className="btn btn-primary capitalize">Update Profile</button>
                 </div>
             </div>
         </div>

@@ -5,7 +5,12 @@ import { toast } from 'react-toastify';
 import ManageAllOrder from './ManageAllOrder';
 const ManageAllOrders = () => {
     const { isLoading, error, data: orders } = useQuery('orders', () =>
-        fetch('http://localhost:5000/order').then(res =>
+        fetch('http://localhost:5000/order', {
+            method: 'GET',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            },
+        }).then(res =>
             res.json()
         )
     )
@@ -18,8 +23,8 @@ const ManageAllOrders = () => {
     return (
         <div>
             ManageAllOrders {orders.length}
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
 
                     <thead>
                         <tr>

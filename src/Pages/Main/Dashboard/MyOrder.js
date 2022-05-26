@@ -13,7 +13,7 @@ const MyOrder = ({ index, order, setDeleteOrder }) => {
                 <td>{productName}</td>
                 <td>{orderQuantity}</td>
                 <td>
-                    <label onClick={() => setDeleteOrder(order)} htmlFor="my-modal" class="btn btn-error btn-xs capitalize">dlelete</label>
+                    <label onClick={() => setDeleteOrder(order)} htmlFor="my-modal" className="btn btn-error btn-xs capitalize">dlelete</label>
                 </td>
             </tr>
         </>
