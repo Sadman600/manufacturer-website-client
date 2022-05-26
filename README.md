@@ -5,7 +5,7 @@
 
 This project client Private Code Link:- https://github.com/programming-hero-web-course1/manufacturer-website-client-side-Sadman600
 
-This project server Private Code Link:- https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-Sadman600
+This project server Private Code Link:- https://github.com/programming-hero-web-course1/manufacturer-website-server-side-Sadman600
 
 # Garments Accessories manufacturer project outline
 ➤ Added Home page. add there Navbar, Product banner and items section, two extra section,review section, summery section and footer;

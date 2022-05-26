@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ManageProduct = ({ index, product }) => {
+const ManageProduct = ({ index, product, setProductDelete }) => {
     const { _id, name, description, minimumOrder, availableQuantity, price } = product;
     return (
         <tr>
@@ -10,7 +10,9 @@ const ManageProduct = ({ index, product }) => {
             <td>{minimumOrder}</td>
             <td>{availableQuantity}</td>
             <td>{price}</td>
-            <td><button className="btn btn-xs capitalize">delete</button></td>
+            <td>
+                <label onClick={() => setProductDelete(product)} htmlFor="my-modal-6" class="btn btn-error btn-xs capitalize">delete</label>
+            </td>
         </tr>
     );
 };

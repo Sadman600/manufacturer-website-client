@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../../SharedPage/Loading';
 import { toast } from 'react-toastify';
 import ManageProduct from './ManageProduct';
+import ManageProductModal from './ManageProductModal';
 const ManageProducts = () => {
-    const { isLoading, error, data: products } = useQuery('products', () =>
+    const [productDelete, setProductDelete] = useState(null);
+    const { isLoading, error, data: products, refetch } = useQuery('products', () =>
         fetch('http://localhost:5000/accessories').then(res =>
             res.json()
         )
@@ -17,6 +19,7 @@ const ManageProducts = () => {
     if (error) {
         return toast.error('An error has occurred: ' + error.message);
     }
+
     return (
         <div>
             ManageProducts {products.length}
@@ -39,12 +42,20 @@ const ManageProducts = () => {
                             products.map((product, index) => <ManageProduct
                                 key={index}
                                 product={product}
-                                index={index}></ManageProduct>)
+                                index={index}
+                                setProductDelete={setProductDelete}
+                            ></ManageProduct>)
                         }
                     </tbody>
                 </table>
             </div>
-
+            {
+                productDelete && <ManageProductModal
+                    productDelete={productDelete}
+                    setProductDelete={setProductDelete}
+                    refetch={refetch}
+                ></ManageProductModal>
+            }
         </div>
     );
 };
