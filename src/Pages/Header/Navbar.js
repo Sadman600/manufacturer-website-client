@@ -9,8 +9,13 @@ const Navbar = () => {
     const myMenu = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/myPortfolio'>My Portfolio</Link></li>
+        <li><Link to='/blogs'>Blogs</Link></li>
+
         {
             user ? <li><Link to='/dashboard'>Dashboard</Link></li> : ''
+        }
+        {
+            user ? '' : <li><Link to='/signup'>Sign Up</Link></li>
         }
         <li>{user ? <button onClick={() => {
             signOut(auth);
@@ -31,7 +36,7 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-3xl text-primary">GAccessories</a>
+                <Link to='/' className="btn btn-ghost normal-case text-3xl text-primary">GAccessories</Link>
             </div>
 
             <div className="navbar-center hidden lg:flex">

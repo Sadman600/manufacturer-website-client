@@ -20,6 +20,7 @@ import UpdateProfile from "./Pages/Main/Dashboard/UpdateProfile";
 import MyPortfolio from "./Pages/Main/MyPortfolio/MyPortfolio";
 import PageNotFound from "./Pages/Main/Home/PageNotFound";
 import RequireNotAdmin from "./Pages/Main/Login/RequireNotAdmin";
+import Blogs from "./Pages/Main/Blogs.js/Blogs";
 function App() {
   return (
     <div className="App max-w-screen-xl mx-auto">
@@ -27,6 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/myPortfolio" element={<MyPortfolio></MyPortfolio>} />
+        <Route path="/blogs" element={<Blogs></Blogs>} />
         <Route path="/purchase/:purchaseId" element={<RequireAuth><Purchase /></RequireAuth>} />
         <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} >
           <Route index element={<MyProfile />}></Route>
