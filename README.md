@@ -18,7 +18,7 @@ This project server Private Code Link:- https://github.com/programming-hero-web-
 ➤ Added Log In page for existing user;
 ➤ Added Log out page for when user is login;
 
-# IT Management Service project has include technology 
+# Garments Accessories manufacturer has include technology 
 ➤HTML5 
 ➤CSS
 ➤Tailwind css component library daisyUI
